@@ -26,8 +26,11 @@ html, body {
 #hr{
     border-width: 7px;
     color:  #517b39;
+    border-radius: 5px
 }
-
+h2{
+    margin-top: 30px;
+}
 #summary{
     font-size: 1.5rem;
     color:beige
@@ -45,10 +48,10 @@ html, body {
     
     max-width: 650px; /* Optional: Limit the width of the book section */
     width: 100%; 
-    
+    margin-top: 80px;
 }
 #allbooks{
-    margin-top: 80px;
+    
     display: flex;
     flex-direction: column;
     align-items: center; /* Center the books */
