@@ -23,6 +23,8 @@ app.use(express.static("public"));
 app.get("/", async (req, res) => {
   //Image url From base
   let text
+  let bookTitle
+
   const result = await db.query("SELECT image_url FROM book ORDER BY id ASC");
   const urlPg = result.rows
   let urls = urlPg.map(item => item.image_url);
@@ -54,8 +56,10 @@ app.get("/", async (req, res) => {
       
       )
     )
-    const workUrls = responses.map(response => {
+     
+      const workUrls = responses.map(response => {
       const description = response.data.description;
+      
       
       if (typeof description === 'object') {
         return description.value
@@ -63,8 +67,13 @@ app.get("/", async (req, res) => {
       else {
         return description
       }
-    
+      
       })
+      const title = responses.map(response => {
+        return response.data.title
+      })
+      bookTitle = title
+      
       text = workUrls
       text = text.map(text => text.replace(/[\r\n]+/g, ' ') // Replace \r\n with a space
       .replace(/\+/g, '') // Remove all '+' signs
@@ -80,17 +89,12 @@ app.get("/", async (req, res) => {
       console.log('error fetching work details')
     }
  
-  
-    res.render('index.ejs',{listItems:images})
+    res.render('index.ejs',{listItems:images,title:bookTitle,text:text})
     
   } catch (error) {
     console.error('Error fetching images:', error);
   }
   
-
-
- 
-
 });
 
 
