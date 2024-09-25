@@ -12,11 +12,8 @@ html{
     color: #517b39;
     font-family: Georgia, serif;
      min-height: 100vh;
-     max-width: 640px;
-     width: 90%;
-   
-    
-  
+     max-width: 800px;
+     width: 90%; 
 }
 
 #hr{
@@ -37,10 +34,8 @@ html{
 
 .abook{
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items:flex-start; /* Center book content */
+    grid-template-columns: 3fr 7fr ;
     gap: 1px;
-    grid-template-columns: 200px 450px;
     width: 100%; 
    
     
@@ -66,9 +61,35 @@ html{
 
 }
 
-
 #text {
-   
     width: 100%; 
-    
 }
+
+.form-control.search-bar:hover{
+    border-color: #517b39;
+    box-shadow: 0 0 10px #517b39; /* Box shadow on hover */
+}
+
+.rounded-circle.d-block.link-body-emphasis.text-success-emphasis.dropdown-toggle:hover{
+    border-color: #517b39;
+    box-shadow: 0 0 10px #517b39; /* Box shadow on hover */
+}
+
+.rounded-circle.d-block.link-body-emphasis.text-success-emphasis.dropdown-toggle:focus{
+    outline: none; /* Remove blue outline */
+    box-shadow:  0 0 10px #517b39; /* Optionally remove any box shadow */
+}
+
+.form-control.search-bar:focus {
+    outline: none; /* Remove blue outline */
+    box-shadow:  0 0 10px #517b39; /* Optionally remove any box shadow */
+  }
+
+  .dropdown-menu .dropdown-item {
+    color: #b4b0b0; /* Change to your desired color */
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+    color: #b4b0b0; /* Change the hover color if desired */
+    background-color: #252724;
+  }
