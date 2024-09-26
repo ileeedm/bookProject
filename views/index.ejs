@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="index">
   <head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,9 +11,7 @@
     
     <header class="py-3 mb-3 ">
       
-      <div class="container-fluid d-grid gap-3 " style="grid-template-columns: 4fr 2fr ;">
-       
-  
+      <div class="container-fluid d-grid" style="grid-template-columns: 3fr 2fr ;">
         <div class="d-flex align-items-center" >
           <form class="rounded-4 w-100 me-3 " role="search">
             <input type="search" id="search" class="form-control search-bar" placeholder="Search..." aria-label="Search" style="border: 2px solid #517b39; background-color: beige; transition: box-shadow 1s, border-color 1s; " >
@@ -35,55 +33,52 @@
           </div>
       
       </div>
-    </header>
     <hr id = "hr">
-   
+    </header>
     <% for(let i = 0; i < listItems.length; i++) { %>  
   <div id="bookContainer" style="opacity: 0; transition: opacity 2s;">
-     <section id ="allbooks">
-   
-      <div class="abook" data-rating="10" data-title="You Can Negotiate Anything - by Herb Cohen" data-date="2023-08-02">
+     <div class="abook" data-rating="10" data-title="You Can Negotiate Anything - by Herb Cohen" data-date="2023-08-02">
         <div id="imageText">
           <img src="data:image/jpeg;base64,<%=listItems[i] %>" id="image" alt="Book Cover">
-          <h2><a href="/book/NegotiateAnything" id ="title"><%=title[i] %> </a></h2>
+          <h2 id ="title">
+            <a href="/book/NegotiateAnything" id="titleBook"><%=title[i] %> </a>
+          </h2>
         </div>
         <div id="text">
           <p id ="text"><%= text[i] %></p>
         </div>   
       </div> 
       </div>
-   
-      </section>
     </div>
     <% } %>
 
     <script>          
       document.getElementById('search').addEventListener('input', function() {
-    const searchTerm = this.value.toLowerCase(); // Get the search term
-    const books = document.querySelectorAll('.abook'); // Select all book divs
+      const searchTerm = this.value.toLowerCase(); // Get the search term
+      const books = document.querySelectorAll('.abook'); // Select all book divs
 
-    books.forEach(book => {
+      books.forEach(book => {
       const titleElement = book.querySelector('h2 a'); // Get the <a> element inside <h2>
-        const titleText = titleElement.textContent.toLowerCase(); // Get the text from the <a> element
-        // Check if the title includes the search term
-        if (titleText.includes(searchTerm)) {
-            book.style.display = ''; // Show the book if it matches
-        } else {
-            book.style.display = 'none'; // Hide it if it doesn't match
-        }
-    });
-});
- 
+      const titleText = titleElement.textContent.toLowerCase(); // Get the text from the <a> element
+      // Check if the title includes the search term
+      if (titleText.includes(searchTerm)) {
+          book.style.display = ''; // Show the book if it matches
+      } else {
+          book.style.display = 'none'; // Hide it if it doesn't match
+      }
+      });
+      });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const containers = document.querySelectorAll('#bookContainer');
-    containers.forEach((container, index) => {
-      setTimeout(function() {
+
+        document.addEventListener("DOMContentLoaded", function() {
+        const containers = document.querySelectorAll('#bookContainer');
+        containers.forEach((container, index) => {
+        setTimeout(function() {
         container.style.opacity = '1';
-      }, 2000 + index * 500); // 3 seconds plus an additional 500ms for each container
-    });
-  });
-  
+        }, 1700 + index * 500); // 3 seconds plus an additional 500ms for each container
+        });
+        });
+
 
     </script>
   <!-- Bootstrap JS and Popper.js -->

@@ -1,25 +1,40 @@
+#login{
+    width: 100%;
+    height: 100%;
+}
 
-html{
-    display: inline-flex;
-    justify-content: center;
+#index{
+    display: flex; /* Use Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    background-color: #0e0e0e; /* Match background color */
     width: 100%;
 }
+
+#sign{
+    display: inline-grid;
+}
+
 #booklist{
-    display: inline-flex;
-    justify-content: flex-start;
-    flex-direction: column;
+    display: inline-grid;
+    row-gap:25px;
     background-color: #0e0e0e;
     color: #517b39;
     font-family: Georgia, serif;
      min-height: 100vh;
-     max-width: 800px;
-     width: 90%; 
+     max-width: 650px;
+     width: 100%;
+     
 }
 
 #hr{
     border-width: 7px;
     color:  #517b39;
-    border-radius: 5px
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
 
 #summary{
@@ -34,10 +49,11 @@ html{
 
 .abook{
     display: grid;
+    column-gap: 40px;
     grid-template-columns: 3fr 7fr ;
-    gap: 1px;
     width: 100%; 
-   
+   padding-left: 12px;
+   padding-right: 12px;
     
 }
 #allbooks{
@@ -51,14 +67,14 @@ html{
 #title{
     color: #718764;
     font-size: 1.5rem;
+    margin-top: 15px;
+}
+#titleBook{
+    color: #718764;
+    font-size: 1.5rem;
 }
 #imageText{
-    display: grid; /* Center book content */
-    gap: 6px;
-    row-gap: 10px;
     width: 100%; 
-   
-
 }
 
 #text {
@@ -93,3 +109,4 @@ html{
     color: #b4b0b0; /* Change the hover color if desired */
     background-color: #252724;
   }
+  
